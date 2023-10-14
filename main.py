@@ -3,18 +3,18 @@ import easyocr
 import matplotlib.pyplot as plt
 
 # read image
-image_path = r'G:\Career\Curriculum\Courses\Advanced Computer Vision\Text Recognition\data\test3.png'
+image_path = r'data\Spam-Classifier-Performance.PNG'
 img = cv.imread(image_path)
 
 # instantiate text detector
 reader = easyocr.Reader(['en'], gpu=False)
 
 # detect text on image
-text_ = reader.readtext(img)
+text = reader.readtext(img)
 
 threshold = 0.25
 # draw bbox and text
-for t in text_:
+for t in text:
     print(t)
 
     bbox, text, score = t
